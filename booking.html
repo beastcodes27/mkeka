@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SafariExpress | Booking</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="logo.png" alt="SafariExpress Logo">
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fa-solid fa-house"> Home</i></a></li>
+        <li><a href="about.html"><i class="fa-solid fa-users">  About</i></a></li>
+        <li><a href="booking.html"><i class="fa-solid fa-ticket">  Booking</i></a></li>
+        <li><a href="trips.html"><i class="fa-solid fa-bus-simple">  Available Buses</i></a></li>
+        <li><a href="contact.html"><i class="fa-solid fa-address-card">  Contact</i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="booking-section">
+      <h1>Find Your Bus</h1>
+      <p class="form-description">Search and book available buses for your route</p>
+      
+      <form class="booking-form" onsubmit="return redirectToTrips(event)">
+        <div class="form-group">
+          <label for="from">Travel From:</label>
+          <input type="text" id="from" name="from" placeholder="e.g. Dar es Salaam" required>
+        </div>
+
+        <div class="form-group">
+          <label for="to">Travel To:</label>
+          <input type="text" id="to" name="to" placeholder="e.g. MOrogoro" required>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Travel Date:</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+
+        <button type="submit" class="btn">Search Buses</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SafariExpress. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function redirectToTrips(event) {
+      event.preventDefault();
+
+      const from = document.getElementById('from').value.trim();
+      const to = document.getElementById('to').value.trim();
+      const date = document.getElementById('date').value;
+
+      if (from && to && date) {
+        localStorage.setItem("travelFrom", from);
+        localStorage.setItem("travelTo", to);
+        localStorage.setItem("travelDate", date);
+        window.location.href = "trips.html";
+      }
+    }
+  </script>
+</body>
+</html>

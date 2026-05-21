@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SafariExpress | Contact</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="logo.png" alt="SafariExpress Logo">
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html"> <i class="fa-solid fa-house"> Home</i></a></li>
+        <li><a href="about.html"><i class="fa-solid fa-users">  About</i></a></li>
+        <li><a href="booking.html"><i class="fa-solid fa-ticket">  Booking</i></a></li>
+        <li><a href="trips.html"><i class="fa-solid fa-bus-simple">  Available Buses</i></a></li>
+        <li><a href="contact.html"><i class="fa-solid fa-address-card">  Contact</i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-section">
+      <h1>Contact Us</h1>
+      <p>Have a question or need help with booking? Reach out to us!</p>
+
+      <div class="contact-container">
+        <form class="contact-form" onsubmit="return fakeSubmit(event)">
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Your Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+
+        <div class="contact-info">
+          <h3>Company Info</h3>
+          <p><strong>Phone:</strong> +255 617 800 426</p>
+          <p><strong>Email:</strong> safari@safariexpress.co.tz</p>
+          <p><strong>Location:</strong> Magomeni, Dar es Salaam, Tanzania</p>
+          <p><strong>WhatsApp:</strong> <a href="https://wa.me/255617800426" target="_blank">Chat on WhatsApp</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SafariExpress. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function fakeSubmit(e) {
+      e.preventDefault();
+      alert("Thank you for contacting us! We’ll respond shortly.");
+      e.target.reset();
+      return false;
+    }
+  </script>
+</body>
+</html>

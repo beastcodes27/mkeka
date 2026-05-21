@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SafariExpress | Available Buses</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="logo.png" alt="SafariExpress Logo">
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fa-solid fa-house"> Home</i></a></li>
+        <li><a href="about.html"><i class="fa-solid fa-users">  About</i></a></li>
+        <li><a href="booking.html"><i class="fa-solid fa-ticket">  Booking</i></a></li>
+        <li><a href="trips.html"><i class="fa-solid fa-bus-simple">  Available Buses</i></a></li>
+        <li><a href="contact.html"><i class="fa-solid fa-address-card">  Contact</i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="buses-section">
+      <h1>Available Buses</h1>
+      <p id="route-info">Loading travel details...</p>
+
+      <div class="bus-list">
+        <div class="bus-card">
+          <h3>BEASTCODES Express</h3>
+          <p><strong>Departure:</strong> 06:30 AM</p>
+          <p><strong>Fare:</strong> TZS 25,000</p>
+          <p><strong>Seats Available:</strong> 12</p>
+          <button class="btn" onclick="confirmBooking 'BEASTCODES Express'">Book Now</button>
+        </div>
+
+        <div class="bus-card">
+          <h3>KABEHE SAFARI'S</h3>
+          <p><strong>Departure:</strong> 08:00 AM</p>
+          <p><strong>Fare:</strong> TZS 28,000</p>
+          <p><strong>Seats Available:</strong> 8</p>
+          <button class="btn" onclick="confirmBooking('KABEHE SAFARI')">Book Now</button>
+        </div>
+        
+        <div class="bus-card">
+          <h3>Agness Coach</h3>
+          <p><strong>Departure:</strong> 09:45 AM</p>
+          <p><strong>Fare:</strong> TZS 30,000</p>
+          <p><strong>Seats Available:</strong> 4</p>
+          <button class="btn" onclick="confirmBooking('Agness Coach')">Book Now</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SafariExpress. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const from = localStorage.getItem("travelFrom");
+    const to = localStorage.getItem("travelTo");
+    const date = localStorage.getItem("travelDate");
+
+    const routeInfo = document.getElementById("route-info");
+
+    if (from && to && date) {
+      routeInfo.textContent = `Showing buses from ${from} to ${to} on ${date}`;
+    } else {
+      routeInfo.textContent = "Please go back to Booking and enter travel details.";
+    }
+    function confirmBooking(busName) {
+        alert("You have booked a seat on " +busName + ".\nThank you for choosing SafariExpress have a nice journey!");
+    }
+  </script>
+</body>
+</html>
